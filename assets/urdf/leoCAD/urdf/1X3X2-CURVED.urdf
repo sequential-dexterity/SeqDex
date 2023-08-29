@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!-- This file was generated from obj_file/1X3X2-CURVED.obj. -->
+<robot name="1X3X2-CURVED.urdf">
+
+
+  <link name="1X3X2-CURVED.obj">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/1X3X2-CURVED/1X3X2-CURVED.obj" scale="0.0015 0.0015 0.0015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/1X3X2-CURVED/1X3X2-CURVED.obj" scale="0.0015 0.0015 0.0015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

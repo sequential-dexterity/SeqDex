@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot name="shovel.urdf">
+  <link name="shovel">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="shovel.obj" scale="0.02 0.02 0.03"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="shovel.obj" scale="0.02 0.02 0.03"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

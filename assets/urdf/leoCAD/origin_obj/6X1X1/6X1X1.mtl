@@ -1,0 +1,697 @@
+# Colors used by LeoCAD
+
+newmtl Light_Grey
+Kd 0.54 0.57 0.55
+
+newmtl Black
+Kd 0.11 0.16 0.20
+
+newmtl Blue
+Kd 0.12 0.35 0.66
+
+newmtl Green
+Kd 0.00 0.52 0.17
+
+newmtl Dark_Turquoise
+Kd 0.02 0.62 0.62
+
+newmtl Red
+Kd 0.71 0.00 0.00
+
+newmtl Dark_Pink
+Kd 0.83 0.21 0.62
+
+newmtl Brown
+Kd 0.33 0.20 0.14
+
+newmtl Dark_Grey
+Kd 0.33 0.35 0.33
+
+newmtl Light_Blue
+Kd 0.59 0.80 0.85
+
+newmtl Bright_Green
+Kd 0.35 0.67 0.25
+
+newmtl Light_Turquoise
+Kd 0.00 0.67 0.64
+
+newmtl Salmon
+Kd 0.94 0.43 0.38
+
+newmtl Pink
+Kd 0.96 0.66 0.73
+
+newmtl Yellow
+Kd 0.98 0.78 0.04
+
+newmtl White
+Kd 0.96 0.96 0.96
+
+newmtl Light_Green
+Kd 0.68 0.85 0.66
+
+newmtl Light_Yellow
+Kd 1.00 0.84 0.50
+
+newmtl Tan
+Kd 0.69 0.63 0.44
+
+newmtl Light_Violet
+Kd 0.69 0.75 0.84
+
+newmtl Purple
+Kd 0.40 0.12 0.51
+
+newmtl Dark_Blue_Violet
+Kd 0.05 0.24 0.60
+
+newmtl Orange
+Kd 0.84 0.47 0.14
+
+newmtl Magenta
+Kd 0.56 0.12 0.46
+
+newmtl Lime
+Kd 0.65 0.79 0.09
+
+newmtl Dark_Tan
+Kd 0.54 0.49 0.38
+
+newmtl Bright_Pink
+Kd 1.00 0.62 0.80
+
+newmtl Medium_Lavender
+Kd 0.63 0.43 0.73
+
+newmtl Lavender
+Kd 0.80 0.64 0.87
+
+newmtl Very_Light_Orange
+Kd 0.99 0.76 0.51
+
+newmtl Bright_Reddish_Lilac
+Kd 0.54 0.07 0.66
+
+newmtl Reddish_Brown
+Kd 0.37 0.19 0.04
+
+newmtl Light_Bluish_Grey
+Kd 0.59 0.59 0.59
+
+newmtl Dark_Bluish_Grey
+Kd 0.39 0.39 0.39
+
+newmtl Medium_Blue
+Kd 0.45 0.59 0.78
+
+newmtl Medium_Green
+Kd 0.50 0.77 0.46
+
+newmtl Light_Pink
+Kd 1.00 0.80 0.81
+
+newmtl Light_Nougat
+Kd 1.00 0.79 0.58
+
+newmtl Medium_Nougat
+Kd 0.67 0.49 0.33
+
+newmtl Medium_Lilac
+Kd 0.27 0.10 0.57
+
+newmtl Medium_Brown
+Kd 0.48 0.36 0.25
+
+newmtl Blue_Violet
+Kd 0.11 0.35 0.65
+
+newmtl Nougat
+Kd 0.73 0.50 0.35
+
+newmtl Light_Salmon
+Kd 0.98 0.72 0.65
+
+newmtl Violet
+Kd 0.15 0.27 0.60
+
+newmtl Medium_Violet
+Kd 0.28 0.38 0.67
+
+newmtl Medium_Lime
+Kd 0.72 0.83 0.15
+
+newmtl Aqua
+Kd 0.61 0.84 0.80
+
+newmtl Light_Lime
+Kd 0.87 0.92 0.57
+
+newmtl Light_Orange
+Kd 0.98 0.65 0.47
+
+newmtl Dark_Nougat
+Kd 0.68 0.38 0.25
+
+newmtl Very_Light_Bluish_Grey
+Kd 0.78 0.78 0.78
+
+newmtl Bright_Light_Orange
+Kd 0.99 0.67 0.00
+
+newmtl Bright_Light_Blue
+Kd 0.62 0.76 0.97
+
+newmtl Rust
+Kd 0.53 0.17 0.09
+
+newmtl Reddish_Lilac
+Kd 0.56 0.33 0.59
+
+newmtl Lilac
+Kd 0.34 0.31 0.62
+
+newmtl Bright_Light_Yellow
+Kd 1.00 0.93 0.42
+
+newmtl Sky_Blue
+Kd 0.47 0.79 0.85
+
+newmtl Dark_Blue
+Kd 0.10 0.20 0.35
+
+newmtl Dark_Green
+Kd 0.00 0.27 0.10
+
+newmtl Flamingo_Pink
+Kd 1.00 0.58 0.76
+
+newmtl Dark_Brown
+Kd 0.21 0.13 0.00
+
+newmtl Maersk_Blue
+Kd 0.67 0.85 1.00
+
+newmtl Dark_Red
+Kd 0.45 0.00 0.07
+
+newmtl Dark_Azure
+Kd 0.27 0.61 0.76
+
+newmtl Medium_Azure
+Kd 0.41 0.76 0.89
+
+newmtl Light_Aqua
+Kd 0.83 0.95 0.92
+
+newmtl Yellowish_Green
+Kd 0.89 0.98 0.60
+
+newmtl Olive_Green
+Kd 0.47 0.47 0.31
+
+newmtl Sand_Red
+Kd 0.53 0.38 0.37
+
+newmtl Medium_Dark_Pink
+Kd 0.97 0.52 0.69
+
+newmtl Coral
+Kd 1.00 0.43 0.47
+
+newmtl Earth_Orange
+Kd 0.85 0.43 0.17
+
+newmtl Sand_Purple
+Kd 0.46 0.40 0.49
+
+newmtl Sand_Green
+Kd 0.44 0.56 0.49
+
+newmtl Sand_Blue
+Kd 0.44 0.51 0.60
+
+newmtl Fabuland_Brown
+Kd 0.82 0.47 0.27
+
+newmtl Medium_Orange
+Kd 0.96 0.53 0.14
+
+newmtl Dark_Orange
+Kd 0.57 0.31 0.11
+
+newmtl Very_Light_Grey
+Kd 0.74 0.71 0.65
+
+newmtl Light_Orange_Brown
+Kd 0.98 0.61 0.11
+
+newmtl Fabuland_Red
+Kd 1.00 0.50 0.08
+
+newmtl Fabuland_Orange
+Kd 0.81 0.54 0.28
+
+newmtl Fabuland_Pastel_Green
+Kd 0.47 0.99 0.47
+
+newmtl Trans_Dark_Blue
+Kd 0.00 0.13 0.63
+D 0.50
+
+newmtl Trans_Green
+Kd 0.14 0.47 0.25
+D 0.50
+
+newmtl Trans_Bright_Green
+Kd 0.34 0.90 0.27
+D 0.50
+
+newmtl Trans_Red
+Kd 0.79 0.10 0.04
+D 0.50
+
+newmtl Trans_Dark_Pink
+Kd 0.87 0.40 0.58
+D 0.50
+
+newmtl Trans_Neon_Orange
+Kd 1.00 0.50 0.05
+D 0.50
+
+newmtl Trans_Very_Light_Blue
+Kd 0.76 0.87 0.94
+D 0.50
+
+newmtl Trans_Black
+Kd 0.39 0.37 0.32
+D 0.50
+
+newmtl Trans_Medium_Blue
+Kd 0.33 0.60 0.72
+D 0.50
+
+newmtl Trans_Neon_Green
+Kd 0.75 1.00 0.00
+D 0.50
+
+newmtl Trans_Light_Blue
+Kd 0.68 0.91 0.94
+D 0.50
+
+newmtl Trans_Bright_Reddish_Lilac
+Kd 0.59 0.44 0.62
+D 0.50
+
+newmtl Trans_Pink
+Kd 0.99 0.59 0.67
+D 0.50
+
+newmtl Trans_Yellow
+Kd 0.96 0.80 0.18
+D 0.50
+
+newmtl Trans_Clear
+Kd 0.99 0.99 0.99
+D 0.50
+
+newmtl Trans_Purple
+Kd 0.65 0.65 0.80
+D 0.50
+
+newmtl Trans_Neon_Yellow
+Kd 0.85 0.69 0.00
+D 0.50
+
+newmtl Trans_Orange
+Kd 0.94 0.56 0.11
+D 0.50
+
+newmtl Trans_Bright_Light_Orange
+Kd 0.99 0.72 0.43
+D 0.50
+
+newmtl Trans_Fire_Yellow
+Kd 0.98 0.91 0.56
+D 0.50
+
+newmtl Trans_Reddish_Lilac
+Kd 0.76 0.51 0.65
+D 0.50
+
+newmtl Trans_Light_Green
+Kd 0.49 0.76 0.57
+D 0.50
+
+newmtl Trans_Light_Blue_Violet
+Kd 0.42 0.67 0.89
+D 0.50
+
+newmtl Chrome_Gold
+Kd 0.87 0.76 0.46
+
+newmtl Chrome_Silver
+Kd 0.81 0.81 0.81
+
+newmtl Chrome_Antique_Brass
+Kd 0.39 0.35 0.30
+
+newmtl Chrome_Black
+Kd 0.11 0.16 0.20
+
+newmtl Chrome_Blue
+Kd 0.42 0.59 0.75
+
+newmtl Chrome_Green
+Kd 0.24 0.70 0.44
+
+newmtl Chrome_Pink
+Kd 0.67 0.30 0.56
+
+newmtl Pearl_White
+Kd 0.96 0.95 0.87
+
+newmtl Pearl_Very_Light_Grey
+Kd 0.60 0.61 0.60
+
+newmtl Pearl_Light_Grey
+Kd 0.63 0.63 0.63
+
+newmtl Flat_Silver
+Kd 0.54 0.53 0.53
+
+newmtl Pearl_Dark_Grey
+Kd 0.28 0.30 0.28
+
+newmtl Metal_Blue
+Kd 0.36 0.46 0.56
+
+newmtl Pearl_Light_Gold
+Kd 0.87 0.67 0.40
+
+newmtl Pearl_Gold
+Kd 0.67 0.50 0.18
+
+newmtl Flat_Dark_Gold
+Kd 0.51 0.45 0.31
+
+newmtl Copper
+Kd 0.46 0.30 0.23
+
+newmtl Reddish_Gold
+Kd 0.67 0.51 0.28
+
+newmtl Metallic_Silver
+Kd 0.46 0.46 0.46
+
+newmtl Metallic_Green
+Kd 0.42 0.47 0.27
+
+newmtl Metallic_Gold
+Kd 0.86 0.67 0.20
+
+newmtl Metallic_Black
+Kd 0.04 0.07 0.15
+
+newmtl Metallic_Dark_Grey
+Kd 0.24 0.24 0.22
+
+newmtl Metallic_Copper
+Kd 0.76 0.50 0.33
+
+newmtl Metallic_Bright_Red
+Kd 0.84 0.00 0.15
+
+newmtl Metallic_Dark_Green
+Kd 0.00 0.56 0.24
+
+newmtl Milky_White
+Kd 0.93 0.93 0.93
+D 0.94
+
+newmtl Glow_In_Dark_Opaque
+Kd 0.88 1.00 0.69
+D 0.94
+
+newmtl Glow_In_Dark_Trans
+Kd 0.74 0.78 0.68
+D 0.94
+
+newmtl Glow_In_Dark_White
+Kd 0.96 0.95 0.84
+D 0.94
+
+newmtl Glitter_Trans_Dark_Pink
+Kd 0.87 0.40 0.58
+D 0.50
+
+newmtl Glitter_Trans_Clear
+Kd 0.93 0.93 0.93
+D 0.50
+
+newmtl Glitter_Trans_Purple
+Kd 0.39 0.00 0.38
+D 0.50
+
+newmtl Glitter_Trans_Light_Blue
+Kd 0.68 0.91 0.94
+D 0.50
+
+newmtl Glitter_Trans_Neon_Green
+Kd 0.75 1.00 0.00
+D 0.50
+
+newmtl Glitter_Trans_Orange
+Kd 0.94 0.56 0.11
+D 0.50
+
+newmtl Opal_Trans_Clear
+Kd 0.99 0.99 0.99
+D 0.94
+
+newmtl Opal_Trans_Light_Blue
+Kd 0.68 0.91 0.94
+D 0.78
+
+newmtl Opal_Trans_Dark_Pink
+Kd 0.87 0.40 0.58
+D 0.78
+
+newmtl Glitter_Trans_Bright_Green
+Kd 0.34 0.90 0.27
+D 0.50
+
+newmtl Speckle_Black_Silver
+Kd 0.00 0.00 0.00
+
+newmtl Speckle_Black_Gold
+Kd 0.00 0.00 0.00
+
+newmtl Speckle_Black_Copper
+Kd 0.00 0.00 0.00
+
+newmtl Speckle_Dark_Bluish_Grey_Silver
+Kd 0.39 0.37 0.38
+
+newmtl Rubber_Yellow
+Kd 0.98 0.78 0.04
+
+newmtl Rubber_Black
+Kd 0.11 0.16 0.20
+
+newmtl Rubber_Blue
+Kd 0.12 0.35 0.66
+
+newmtl Rubber_Red
+Kd 0.71 0.00 0.00
+
+newmtl Rubber_Orange
+Kd 0.84 0.47 0.14
+
+newmtl Rubber_Light_Grey
+Kd 0.54 0.57 0.55
+
+newmtl Rubber_Dark_Blue
+Kd 0.10 0.20 0.35
+
+newmtl Rubber_Purple
+Kd 0.40 0.12 0.51
+
+newmtl Rubber_Lime
+Kd 0.65 0.79 0.09
+
+newmtl Rubber_Light_Bluish_Grey
+Kd 0.59 0.59 0.59
+
+newmtl Rubber_Flat_Silver
+Kd 0.54 0.53 0.53
+
+newmtl Rubber_White
+Kd 0.96 0.96 0.96
+
+newmtl Rubber_Green
+Kd 0.00 0.52 0.17
+
+newmtl Rubber_Bright_Green
+Kd 0.35 0.67 0.25
+
+newmtl Rubber_Magenta
+Kd 0.56 0.12 0.46
+
+newmtl Rubber_Medium_Lavender
+Kd 0.63 0.43 0.73
+
+newmtl Rubber_Lavender
+Kd 0.80 0.64 0.87
+
+newmtl Rubber_Reddish_Brown
+Kd 0.37 0.19 0.04
+
+newmtl Rubber_Medium_Blue
+Kd 0.45 0.59 0.78
+
+newmtl Rubber_Bright_Light_Yellow
+Kd 1.00 0.93 0.42
+
+newmtl Rubber_Dark_Brown
+Kd 0.21 0.13 0.00
+
+newmtl Rubber_Dark_Red
+Kd 0.45 0.00 0.07
+
+newmtl Rubber_Dark_Azure
+Kd 0.27 0.61 0.76
+
+newmtl Rubber_Medium_Azure
+Kd 0.41 0.76 0.89
+
+newmtl Rubber_Light_Aqua
+Kd 0.83 0.95 0.92
+
+newmtl Rubber_Sand_Green
+Kd 0.44 0.56 0.49
+
+newmtl Rubber_Dark_Orange
+Kd 0.57 0.31 0.11
+
+newmtl Rubber_Trans_Yellow
+Kd 0.96 0.80 0.18
+D 0.50
+
+newmtl Rubber_Trans_Clear
+Kd 0.99 0.99 0.99
+D 0.50
+
+newmtl Rubber_Trans_Bright_Green
+Kd 0.34 0.90 0.27
+D 0.50
+
+newmtl Rubber_Trans_Red
+Kd 0.79 0.10 0.04
+D 0.50
+
+newmtl Rubber_Trans_Light_Blue
+Kd 0.68 0.91 0.94
+D 0.50
+
+newmtl Main_Colour
+Kd 1.00 1.00 0.50
+
+newmtl Edge_Colour
+Kd 0.50 0.50 0.50
+
+newmtl Trans_Black_IR_Lens
+Kd 0.00 0.00 0.00
+D 0.82
+
+newmtl Magnet
+Kd 0.40 0.40 0.38
+
+newmtl Electric_Contact_Alloy
+Kd 0.82 0.82 0.82
+
+newmtl Electric_Contact_Copper
+Kd 0.68 0.48 0.35
+
+newmtl Trans_Sticker
+Kd 1.00 1.00 1.00
+D 0.06
+
+newmtl Stud_Cylinder_Color
+Kd 0.11 0.16 0.20
+
+newmtl No_Color
+Kd 0.50 0.50 0.50
+
+newmtl Color_B0A7D4
+Kd 0.69 0.65 0.83
+
+newmtl Color_BBBBBB
+Kd 0.73 0.73 0.73
+
+newmtl Color_999999
+Kd 0.60 0.60 0.60
+
+newmtl Color_777777
+Kd 0.47 0.47 0.47
+
+newmtl Color_555555
+Kd 0.33 0.33 0.33
+
+newmtl Color_333333
+Kd 0.20 0.20 0.20
+
+newmtl Color_139716
+Kd 0.07 0.59 0.09
+
+newmtl Color_838082
+Kd 0.51 0.50 0.51
+
+newmtl Color_B4B4D2
+Kd 0.71 0.71 0.82
+
+newmtl Color_C9B65A
+Kd 0.79 0.71 0.35
+
+newmtl Color_062E92
+Kd 0.02 0.18 0.57
+
+newmtl Color_092719
+Kd 0.04 0.15 0.10
+
+newmtl Color_F05C00
+Kd 0.94 0.36 0.00
+
+newmtl Color_F03C00
+Kd 0.94 0.24 0.00
+
+newmtl Color_995220
+Kd 0.60 0.32 0.13
+
+newmtl Color_BEBE64
+Kd 0.75 0.75 0.39
+
+newmtl Color_B1AFA2
+Kd 0.69 0.69 0.64
+
+newmtl Color_4C4C45
+Kd 0.30 0.30 0.27
+
+newmtl Color_7F664C
+Kd 0.50 0.40 0.30
+
+newmtl Color_CFD7DD
+Kd 0.81 0.84 0.87
+
+newmtl Color_AEE9EF
+Kd 0.68 0.91 0.94
+
+newmtl Color_9D8563
+Kd 0.62 0.52 0.39
+
+newmtl Color_927E62
+Kd 0.57 0.49 0.38
+
+newmtl Color_63564B
+Kd 0.39 0.34 0.29
+

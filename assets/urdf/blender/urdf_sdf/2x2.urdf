@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!-- This file was generated from obj_file/2x2.stl. -->
+<robot name="2x2.urdf">
+
+
+  <link name="2x2.stl">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/2x2/2x2.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/2x2/2x2.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+          <sdf resolution="256" scale="0.01 0.01 0.01"/>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

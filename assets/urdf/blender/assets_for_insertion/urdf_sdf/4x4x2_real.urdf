@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!-- This file was generated from obj_file/4x4x2_real.stl. -->
+<robot name="4x4x2_real.urdf">
+
+
+  <link name="4x4x2_real.stl">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/4x4x2_real/4x4x2_real.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/4x4x2_real/4x4x2_real.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+          <sdf resolution="256" scale="0.01 0.01 0.01"/>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

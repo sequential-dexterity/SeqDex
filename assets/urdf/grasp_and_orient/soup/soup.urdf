@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<robot name="soup.urdf">
+  <link name="soup">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <!-- <origin rpy="1.571 3.1415 3.1415" xyz="0 0 0"/> -->
+      <geometry>
+        <mesh filename="soup_2.obj" scale="0.015 0.015 0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="soup_2.obj" scale="0.015 0.015 0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

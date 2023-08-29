@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot name="harmmer.urdf">
+  <link name="harmmer">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="harmmer.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="harmmer.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

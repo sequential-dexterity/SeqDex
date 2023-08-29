@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!-- This file was generated from obj_file/3X2X1.obj. -->
+<robot name="3X2X1.urdf">
+
+
+  <link name="3X2X1.obj">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/3X2X1/3X2X1.obj" scale="0.0015 0.0015 0.0015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/3X2X1/3X2X1.obj" scale="0.0015 0.0015 0.0015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

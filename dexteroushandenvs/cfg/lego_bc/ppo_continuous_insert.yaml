@@ -1,0 +1,103 @@
+params:  
+  algo:
+    name: a2c_continuous
+
+  model:
+    name: continuous_a2c_logstd
+
+  network:
+    name: actor_critic
+    separate: True
+    space:
+      continuous:
+        mu_activation: None
+        sigma_activation: None
+        mu_init:
+          name: default
+          scale: 0.02
+        sigma_init:
+          name: const_initializer
+          val: 0
+        fixed_sigma: True
+    mlp:
+      units: [1024, 512, 256]
+      activation: elu
+      initializer:
+        name: default
+      regularizer:
+        name: None #'l2_regularizer'
+        #scale: 0.001
+
+  load_checkpoint: True
+  load_path: 'runs/AllegroHandLego_12-09-57-30/nn/last_AllegroHandLego_ep_6400_rew_21.301369.pth  seed 14'
+  load path: 'runs/AllegroHandLegoGrasp_13-00-44-09/nn/last_AllegroHandLegoGraspep11040rew[104.9].pth'
+  load_path_grasp: './runs/AllegroHandLegoTest_24-22-53-21/nn/last_AllegroHandLegoTest_ep_1200_rew_1479.2369.pth seed 22'
+  load_path_grasp_7000: './runs/AllegroHandLegoGrasp_27-20-08-23/nn/last_AllegroHandLegoGrasp_ep_6200_rew_7119.4805.pth seed 22'
+
+  config:
+    reward_shaper:
+      scale_value: 1
+    normalize_advantage: True
+    gamma: 0.99
+    tau: 0.95
+
+    learning_rate: 3e-4
+    name: allegro
+    score_to_win: 100000
+
+    grad_norm: 1
+    entropy_coef: 0.0
+    truncate_grads: True
+    env_name: openai_gym
+    e_clip: 0.1
+    clip_value: True
+    num_agent: 1
+    horizon_length: 8
+    minibatch_size: 4096
+    mini_epochs: 5
+    critic_coef: 1
+    lr_schedule:  adaptive
+    kl_threshold: 0.02
+
+    max_epochs: 106140
+    save_frequency: 1000
+    save_best_after: 200
+    games_to_track: 8
+    
+    normalize_input: False
+    seq_length: 4
+    bounds_loss_coef: 0.001
+    env_config:
+      seed: 42
+
+    player:
+      #render: True
+      deterministic: True
+      max_steps: 1000000
+      games_num: 1000000
+      print_stats: False
+
+    central_value_config:
+      minibatch_size: 4096
+      mini_epochs: 5
+      learning_rate: 1e-3
+      lr_schedule: adaptive
+      schedule_type: standard
+      kl_threshold: 0.02
+      clip_value: True
+      normalize_input: True
+      truncate_grads: True
+
+      network:
+        name: actor_critic
+        central_value: True
+        mlp:
+          units: [1024, 512, 256]
+          activation: elu
+          d2rl: False
+          initializer:
+            name: default
+          regularizer:
+            name: None
+
+

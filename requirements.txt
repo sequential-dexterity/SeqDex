@@ -1,0 +1,8 @@
+numpy==1.20.0
+opencv-python
+einops
+pyquaternion
+pytorch3d
+rl_games==1.5.2
+pyautogui
+h5py

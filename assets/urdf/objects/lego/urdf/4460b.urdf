@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!-- This file was generated from new_parts_center/4460b.obj. -->
+<robot name="4460b.urdf">
+
+
+  <link name="4460b.obj">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../new_parts_center/4460b.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../new_parts_center/4460b.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>

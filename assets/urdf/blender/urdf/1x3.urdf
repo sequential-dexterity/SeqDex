@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!-- This file was generated from obj_file/2x2_curve.stl. -->
+<robot name="1x3.urdf">
+
+
+  <link name="1x3.stl">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/1x3/1x3.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="../origin_obj/1x3/1x3.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <density value="567.0"/>
+    </inertial>
+  </link>
+
+</robot>
