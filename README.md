@@ -14,7 +14,7 @@
 
 ## Overview
 
-This repository is the implementation code of the paper "Sequential Dexterity: Chaining Dexterous Policies for Long-Horizon Manipulation"([Paper](), [Website](https://sequential-dexterity.github.io/), [Presentation]()) by Yuanpei Chen*, Chen Wang*, Li Fei-Fei and C. Karen Liu at [The Movement Lab](https://tml.stanford.edu/) and [Stanford Vision and Learning Lab](http://svl.stanford.edu/). In this repo, we provide our full implementation code of quick demo, training, evaluation, and real-world system.
+This repository is the implementation code of the paper "Sequential Dexterity: Chaining Dexterous Policies for Long-Horizon Manipulation"([Paper](), [Website](https://sequential-dexterity.github.io/), [Presentation](https://youtu.be/2mmqQYO4KlY)) by Yuanpei Chen*, Chen Wang*, Li Fei-Fei and C. Karen Liu at [The Movement Lab](https://tml.stanford.edu/) and [Stanford Vision and Learning Lab](http://svl.stanford.edu/). In this repo, we provide our full implementation code of quick demo, training, evaluation, and real-world system.
 
 ## Installation
 * python 3.8
