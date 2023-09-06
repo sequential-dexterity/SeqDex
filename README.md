@@ -14,7 +14,7 @@
 
 ## Overview
 
-This repository is the implementation code of the paper "Sequential Dexterity: Chaining Dexterous Policies for Long-Horizon Manipulation"([Paper](), [Website](https://sequential-dexterity.github.io/), [Presentation](https://youtu.be/2mmqQYO4KlY)) by Yuanpei Chen*, Chen Wang*, Li Fei-Fei and C. Karen Liu at [The Movement Lab](https://tml.stanford.edu/) and [Stanford Vision and Learning Lab](http://svl.stanford.edu/). In this repo, we provide our full implementation code of quick demo, training, evaluation, and real-world system.
+This repository is the implementation code of the paper "Sequential Dexterity: Chaining Dexterous Policies for Long-Horizon Manipulation"([Paper](https://arxiv.org/abs/2309.00987), [Website](https://sequential-dexterity.github.io/), [Presentation](https://youtu.be/2mmqQYO4KlY)) by Yuanpei Chen*, Chen Wang*, Li Fei-Fei and C. Karen Liu at [The Movement Lab](https://tml.stanford.edu/) and [Stanford Vision and Learning Lab](http://svl.stanford.edu/). In this repo, we provide our full implementation code of quick demo, training, evaluation, and real-world system.
 
 ## Installation
 * python 3.8
@@ -76,7 +76,7 @@ Since each sub-task takes about 1~2 days to train, it may take a long time for t
 python train_rlgames.py --task=[BlockAssemblySearch / BlockAssemblyOrient / BlockAssemblyGraspSim / BlockAssemblyInsertSim]   --num_envs=1024
 ```
 
-The trained model will be saved to `runs` folder, and the terminal state of the task will be saved to `immediate_state`. These terminal states are also used to train the transition feasibility function (see our [paper]()), using the following command: 
+The trained model will be saved to `runs` folder, and the terminal state of the task will be saved to `immediate_state`. These terminal states are also used to train the transition feasibility function (see our [paper](https://arxiv.org/abs/2309.00987)), using the following command: 
 
 ```	
 python policy_sequencing/tvalue_trainer.py --task=[BlockAssemblySearch / BlockAssemblyOrient / BlockAssemblyGraspSim / BlockAssemblyInsertSim]
