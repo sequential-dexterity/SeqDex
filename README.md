@@ -122,10 +122,10 @@ We thank the list of contributors from the [Bi-DexHands](https://github.com/PKU-
 ## Citations
 Please cite [Sequential Dexterity](https://sequential-dexterity.github.io) if you use this repository in your publications:
 ```
-@inproceedings{chen2023sequential, 
+@article{chen2023sequential,
   title={Sequential Dexterity: Chaining Dexterous Policies for Long-Horizon Manipulation},
-  author={Chen, Yuanpei and Wang, Chen and Fei-Fei, Li and Liu, C. Karen},
-  booktitle={Conference on Robot Learning},
+  author={Chen, Yuanpei and Wang, Chen and Fei-Fei, Li and Liu, C Karen},
+  journal={arXiv preprint arXiv:2309.00987},
   year={2023}
 }
 ```
