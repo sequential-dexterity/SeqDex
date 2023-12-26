@@ -1884,6 +1884,8 @@ def compute_hand_reward(
 
     reward = torch.exp(- (5 * lego_z_align_reward_rew + 5 * arm_hand_finger_dist_rew))
 
+    # reward = torch.exp(- (5 * lego_z_align_reward_rew + 5 * arm_hand_finger_dist_rew)) + tvalue
+
     if reward[0] <= 0:
         print("lego_x_align_reward: ", lego_x_align_reward[0].item())
         print("lego_z_align_reward: ", lego_z_align_reward[0].item())

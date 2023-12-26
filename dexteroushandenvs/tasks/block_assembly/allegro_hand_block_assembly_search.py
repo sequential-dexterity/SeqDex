@@ -391,6 +391,24 @@ class BlockAssemblySearch(BaseTask):
             self.start_time = time.time()
             self.last_start_time = self.start_time
 
+        # tvalue
+        from policy_sequencing.terminal_value_function import RetriGraspTValue
+        self.is_test_tvalue = False
+        self.t_value = RetriGraspTValue(input_dim=65 * 10, output_dim=2).to(self.device)
+        for param in self.t_value.parameters():
+            param.requires_grad_(True)
+        self.t_value_obs_buf = torch.zeros((self.num_envs, 65 * 10), dtype=torch.float32, device=self.device)
+    
+        self.t_value_optimizer = optim.Adam(self.t_value.parameters(), lr=0.0003)
+        self.t_value_save_path = "./intermediate_state/searching_grasping_t_value/"
+        os.makedirs(self.t_value_save_path, exist_ok=True)
+        self.bce_logits_loss = torch.nn.BCEWithLogitsLoss()
+
+        if self.is_test_tvalue:
+            self.t_value.load_state_dict(torch.load("./intermediate_state/searching_grasping_t_value/tstar/search_grasp_tvalue.pt", map_location='cuda:0'))
+            self.t_value.to(self.device)
+            self.t_value.eval()
+
     def create_sim(self):
         self.dt = self.sim_params.dt
         self.up_axis_idx = self.set_sim_params_up_axis(self.sim_params, self.up_axis)
@@ -929,7 +947,7 @@ class BlockAssemblySearch(BaseTask):
             self.max_episode_length, self.object_pos, self.object_rot, self.object_angvel, self.goal_pos, self.goal_rot, self.segmentation_target_pos, self.hand_base_pos, self.emergence_reward, self.arm_hand_ff_pos, self.arm_hand_rf_pos, self.arm_hand_mf_pos, self.arm_hand_th_pos, self.heap_movement_penalty,
             self.dist_reward_scale, self.rot_reward_scale, self.rot_eps, self.actions, self.action_penalty_scale,
             self.success_tolerance, self.reach_goal_bonus, self.fall_dist, self.fall_penalty, self.rotation_id,
-            self.max_consecutive_successes, self.av_factor, (self.object_type == "pen"), self.init_heap_movement_penalty,
+            self.max_consecutive_successes, self.av_factor, (self.object_type == "pen"), self.init_heap_movement_penalty, self.tvalue,
         )
 
         self.meta_rew_buf += self.rew_buf[:].clone()
@@ -1112,6 +1130,9 @@ class BlockAssemblySearch(BaseTask):
         self.apply_teleoper_perturbation = False
         self.apply_teleoper_perturbation_env_id = torch.where(abs(self.progress_buf - self.perturb_steps.squeeze(-1)) < 4, 1, 0).nonzero(as_tuple=False)
 
+        self.tvalue_predict_confident = self.t_value(self.t_value_obs_buf)
+        self.tvalue = torch.sigmoid(self.tvalue_predict_confident)[:, 1]
+
         if self.obs_type == "full_no_vel":
             self.compute_full_observations(True)
         elif self.obs_type == "full":
@@ -1132,18 +1153,17 @@ class BlockAssemblySearch(BaseTask):
             self.gym.end_access_image_tensors(self.sim)
 
         # compute temporal tvalue
-        if self.save_hdf5:
-            if self.use_temporal_tvalue:
-                for i in range(10):
-                    if i == 10-1:
-                        self.temp_obs = self.obs_buf[:, 0:62].clone()
-                        self.temp_obs[:, 26:30] = self.camera_view_segmentation_target_rot
-                        self.temp_obs[:, 62:63] = self.segmentation_object_center_point_x / 128
-                        self.temp_obs[:, 63:64] = self.segmentation_object_center_point_y / 128
-                        self.temp_obs[:, 64:65] = self.segmentation_object_point_num / 100
-                        self.t_value_obs_buf[:, i*65:(i+1)*65] = self.temp_obs.clone()
-                    else:
-                        self.t_value_obs_buf[:, i*65:(i+1)*65] = self.t_value_obs_buf[:, (i+1)*62:(i+2)*62]
+        for i in range(10):
+            if i == 10-1:
+                self.temp_obs = torch.zeros((self.num_envs, 65), device=self.device, dtype=torch.float)
+                self.temp_obs[:, 0:62] = self.obs_buf[:, 0:62].clone()
+                self.temp_obs[:, 26:30] = self.camera_view_segmentation_target_rot
+                self.temp_obs[:, 62:63] = self.segmentation_object_center_point_x / 128
+                self.temp_obs[:, 63:64] = self.segmentation_object_center_point_y / 128
+                self.temp_obs[:, 64:65] = self.segmentation_object_point_num / 100
+                self.t_value_obs_buf[:, i*65:(i+1)*65] = self.temp_obs.clone()
+            else:
+                self.t_value_obs_buf[:, i*65:(i+1)*65] = self.t_value_obs_buf[:, (i+1)*65:(i+2)*65]
 
     def compute_contact_asymmetric_observations(self):
         self.states_buf[:, 0:23] = unscale(self.arm_hand_dof_pos[:, 0:23],
@@ -1643,7 +1663,7 @@ def compute_hand_reward(
     dist_reward_scale: float, rot_reward_scale: float, rot_eps: float,
     actions, action_penalty_scale: float,
     success_tolerance: float, reach_goal_bonus: float, fall_dist: float,
-    fall_penalty: float, rotation_id: int, max_consecutive_successes: int, av_factor: float, ignore_z_rot: bool, init_heap_movement_penalty
+    fall_penalty: float, rotation_id: int, max_consecutive_successes: int, av_factor: float, ignore_z_rot: bool, init_heap_movement_penalty, tvalue
 ):
     arm_hand_finger_dist = (torch.norm(segmentation_target_pos - arm_hand_ff_pos, p=2, dim=-1) + torch.norm(segmentation_target_pos - arm_hand_mf_pos, p=2, dim=-1)
                             + torch.norm(segmentation_target_pos - arm_hand_rf_pos, p=2, dim=-1) + torch.norm(segmentation_target_pos - arm_hand_th_pos, p=2, dim=-1))
@@ -1654,8 +1674,8 @@ def compute_hand_reward(
     arm_contacts_penalty = torch.sum(arm_contacts, dim=-1)
     palm_contacts_penalty = torch.clamp(palm_contacts_z / 100, 0, None)
 
-    # Total reward is: position distance + orientation alignment + action regularization + success bonus + fall penalty
-    emergence_reward = torch.where(progress_buf >= (max_episode_length - 1), emergence_reward, torch.zeros_like(emergence_reward))
+    # Total rewad is: position distance + orientation alignment + action regularization + success bonus + fall penalty
+    emergence_rreward = torch.where(progress_buf >= (max_episode_length - 1), emergence_reward, torch.zeros_like(emergence_reward))
     success_bonus = torch.zeros_like(emergence_reward)
 
     object_up_reward = torch.clamp(segmentation_target_pos[:, 2]-segmentation_target_init_pos[:, 2], min=0, max=0.1) * 1000 - torch.clamp(segmentation_target_pos[:, 0]-segmentation_target_init_pos[:, 0], min=0, max=0.1) * 1000 - torch.clamp(segmentation_target_pos[:, 1]-segmentation_target_init_pos[:, 1], min=0, max=0.1) * 1000
@@ -1663,6 +1683,8 @@ def compute_hand_reward(
 
     emergence_reward *= object_up_reward / 10
     reward = dist_rew - arm_contacts_penalty + success_bonus - action_penalty + object_up_reward
+
+    # reward = dist_rew - arm_contacts_penalty + success_bonus - action_penalty + object_up_reward + tvalue
 
     if reward[0] == 0:
         print("dist_rew: ", dist_rew[0])
