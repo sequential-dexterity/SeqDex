@@ -28,6 +28,7 @@ conda activate seqdex
 tar -xvf IsaacGym_Preview_4_Package.tar.gz
 cd isaacgym/python
 pip install -e .
+cd examples
 (test installation) python examples/joint_monkey.py
 ```
 * SeqDex
@@ -51,7 +52,7 @@ mv checkpoint SeqDex/dexteroushandenvs/checkpoint
 
 Here we provide a quick demo where you can interactively assign a LEGO building manual you prefer to the robot with the keyboard. The robot will load the trained checkpoints to perform the task. To get the best performance for this demo, the policy takes the full state information (object acceleration, motor velocity, ...) as inputs and is allowed to control the end-effector orientation, which is the policy before distillation for the real-world deployment. To start the demo, simply
 ```	
-cd SeqDex/dexteroushand
+cd SeqDex/dexteroushandenvs
 python train_rlgames.py --task BlockAssemblyGUI --num_envs=1 --play
 ```
 
