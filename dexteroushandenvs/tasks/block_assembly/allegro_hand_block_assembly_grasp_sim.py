@@ -409,13 +409,13 @@ class BlockAssemblyGraspSim(BaseTask):
         self.last_saved =  self.saved_grasp_ternimal_states_index_list.copy()
 
         # tvalue
-        with open("intermediate_state/saved_searching_ternimal_states_medium_mo_tvalue.pkl", "rb") as f:
+        with open("intermediate_state/saved_searching_ternimal_states_good_mo_tvalue.pkl", "rb") as f:
             self.saved_searching_ternimal_states_list = pickle.load(f)
 
         self.saved_searching_ternimal_state = torch.zeros_like(self.root_state_tensor.view(self.num_envs, -1, 13), device=self.device, dtype=torch.float)
 
         from policy_sequencing.terminal_value_function import GraspInsertTValue
-        self.is_test_tvalue = True
+        self.is_test_tvalue = False
         self.t_value = GraspInsertTValue(input_dim=4, output_dim=2).to(self.device)
         for param in self.t_value.parameters():
             param.requires_grad_(True)

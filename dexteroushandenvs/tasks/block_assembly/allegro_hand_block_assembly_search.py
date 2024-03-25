@@ -1345,14 +1345,14 @@ class BlockAssemblySearch(BaseTask):
             for j in range(8):
                 print("saved_searching_ternimal_states_index_{}: ".format(j), self.saved_searching_ternimal_states_index_list[j])
 
-            # if all([i > 5000 for i in self.saved_searching_ternimal_states_index_list]):
-            #     with open("intermediate_state/saved_searching_ternimal_states_medium_mo_tvalue.pkl", "wb") as f:
-            #         pickle.dump(self.saved_searching_ternimal_states_list, f)
-            #     with open("intermediate_state/saved_searching_hand_ternimal_states_medium_mo_tvalue.pkl", "wb") as f:
-            #         pickle.dump(self.saved_searching_hand_ternimal_states_list, f)
+            if all([i > 5000 for i in self.saved_searching_ternimal_states_index_list]):
+                with open("intermediate_state/saved_searching_ternimal_states_medium_mo_tvalue.pkl", "wb") as f:
+                    pickle.dump(self.saved_searching_ternimal_states_list, f)
+                with open("intermediate_state/saved_searching_hand_ternimal_states_medium_mo_tvalue.pkl", "wb") as f:
+                    pickle.dump(self.saved_searching_hand_ternimal_states_list, f)
 
-            #     print("RECORD SUCCESS!")
-            #     exit()
+                print("RECORD SUCCESS!")
+                exit()
 
         # self.max_episode_length = 2
 

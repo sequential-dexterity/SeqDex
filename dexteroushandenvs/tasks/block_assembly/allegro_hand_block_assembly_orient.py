@@ -416,12 +416,12 @@ class BlockAssemblyOrient(BaseTask):
 
         # with open("intermediate_state/saved_searching_ternimal_states_good_mo_new.pkl", "rb") as f:
         # tvalue
-        with open("intermediate_state/saved_searching_ternimal_states_good_mo_tvalue.pkl", "rb") as f:
+        with open("intermediate_state/saved_searching_ternimal_states_medium_mo_tvalue.pkl", "rb") as f:
             self.saved_searching_ternimal_states_list = pickle.load(f)
 
         self.saved_searching_ternimal_state = torch.zeros_like(self.root_state_tensor.view(self.num_envs, -1, 13), device=self.device, dtype=torch.float)
 
-        from dexteroushandenvs.policy_sequencing.terminal_value_function import GraspInsertTValue
+        from policy_sequencing.terminal_value_function import GraspInsertTValue
         self.is_test_tvalue = False
         self.t_value = GraspInsertTValue(input_dim=4, output_dim=2).to(self.device)
         for param in self.t_value.parameters():
@@ -719,7 +719,7 @@ class BlockAssemblyOrient(BaseTask):
         self.num_object_bodies = 0
         self.num_object_shapes = 0
 
-        for n in range(6):
+        for n in range(9):
             for i, lego_file_name in enumerate(all_lego_files_name):
                 lego_asset_options = gymapi.AssetOptions()
                 lego_asset_options.disable_gravity = False
@@ -1507,12 +1507,12 @@ class BlockAssemblyOrient(BaseTask):
             for j in range(8):
                 print("saved_searching_ternimal_states_index_{}: ".format(j), self.saved_digging_ternimal_states_index_list[j])
 
-            # if all([i > 500 for i in self.saved_digging_ternimal_states_index_list]):
-            #     with open("intermediate_state/saved_digging_ternimal_states_good_mo_tvalue.pkl", "wb") as f:
-            #         pickle.dump(self.saved_digging_ternimal_states_list, f)
+            if all([i > 500 for i in self.saved_digging_ternimal_states_index_list]):
+                with open("intermediate_state/saved_searching_ternimal_states_good_mo_tvalue.pkl", "wb") as f:
+                    pickle.dump(self.saved_digging_ternimal_states_list, f)
                 
-            #     print("RECORD SUCCESS!")
-            #     exit()
+                print("RECORD SUCCESS!")
+                exit()
 
         self.perturb_steps[env_ids] = torch_rand_float(0, 150, (len(env_ids), 1), device=self.device).squeeze(-1)
         self.perturb_direction[env_ids] = torch_rand_float(-1, 1, (len(env_ids), 6), device=self.device).squeeze(-1)
@@ -1565,7 +1565,7 @@ class BlockAssemblyOrient(BaseTask):
         for env_id in env_ids:
             object_i = env_id % 8
             self.env_rand = random.sample(self.env_rand_range, 1)
-            self.root_state_tensor[self.lego_indices[env_id].view(-1), :] = self.saved_searching_ternimal_states_list[object_i][self.env_rand].clone().view(108, 13)
+            self.root_state_tensor[self.lego_indices[env_id].view(-1), :] = self.saved_searching_ternimal_states_list[object_i][self.env_rand].clone().view(132, 13)
         
         self.root_state_tensor[self.lego_indices[env_ids].view(-1), 7:13] = 0
 
